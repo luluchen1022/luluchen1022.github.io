@@ -1,8 +1,3 @@
-document.getElementById("app").innerHTML = `
-<h1>Timer</h1>
-<div id="count_down_timer"></div>
-`;
-
 const today = new Date();
 const andyThirtyBirthay = new Date("2024-4-23");
 let countDownTime = andyThirtyBirthay - today;
@@ -23,7 +18,7 @@ function countDownTimer() {
     const seconds = Math.floor(
       (countDownTime - (days * day + hours * hour + minutes * minute)) / second
     );
-    document.getElementById("count_down_timer").innerHTML =
+    document.querySelector(".count_down_timer").innerHTML =
       days + "天" + hours + ":" + minutes + ":" + seconds;
   }, 1000);
 }
