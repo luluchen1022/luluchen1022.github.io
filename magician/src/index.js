@@ -25,9 +25,11 @@ function countDownTimer() {
 
 function addOgtitle() {
   const days = Math.floor(countDownTime / day);
-  document
-    .querySelector('meta[property="og:title"]')
-    .setAttribute("content", `Andy轉職倒數${days}天`);
+  const ogTitle = document.createElement("meta");
+  ogTitle.setAttribute("property", "og:title");
+  ogTitle.content = `Andy轉職倒數${days}天`;
+  const head = document.querySelector("head");
+  head.appendChild(ogTitle);
 }
 
 window.onload = function () {
