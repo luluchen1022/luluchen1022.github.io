@@ -1,15 +1,15 @@
 const today = new Date();
 const andyThirtyBirthay = new Date("2024-4-23");
 let countDownTime = andyThirtyBirthay - today;
+let displayText = "";
+const second = 1000;
+const minute = second * 60; // 6000
+const hour = minute * 60; // 36000
+const day = hour * 24; // 864000
 
 function countDownTimer() {
   setInterval(() => {
     countDownTime = countDownTime - 1000;
-    const second = 1000;
-    const minute = second * 60; // 6000
-    const hour = minute * 60; // 36000
-    const day = hour * 24; // 864000
-
     const days = Math.floor(countDownTime / day);
     const hours = Math.floor((countDownTime - days * day) / hour);
     const minutes = Math.floor(
@@ -23,4 +23,16 @@ function countDownTimer() {
   }, 1000);
 }
 
-countDownTimer();
+function addOgtitle() {
+  const days = Math.floor(countDownTime / day);
+  document
+    .querySelector('meta[property="og:title"]')
+    .setAttribute("content", `剩餘${days}天`);
+}
+
+function init() {
+  addOgtitle();
+  countDownTimer();
+}
+
+init();
