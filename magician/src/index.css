@@ -18,12 +18,27 @@
   text-align: center;
 }
 
-.magician {
-  height: 400px;
+.magician__container {
   position: absolute;
   z-index: 1;
   top: -60%;
   left: 27%;
+}
+
+.magician {
+  height: 400px;
+  top: -60%;
+  left: 27%;
+}
+
+.instagram {
+  text-align: center;
+}
+
+.instagram > a {
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 .container {
@@ -61,4 +76,9 @@
 
 .hexagon-1 div:nth-of-type(3) {
   transform: rotate(150deg);
+}
+
+.description {
+  font-size: 2rem;
+  margin-top: 100px;
 }
