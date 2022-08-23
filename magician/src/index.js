@@ -1,5 +1,5 @@
 const today = new Date();
-const andyThirtyBirthay = new Date("2024-4-23");
+const andyThirtyBirthay = new Date(2024, 4, 23);
 let countDownTime = andyThirtyBirthay - today;
 let displayText = "";
 const second = 1000;
