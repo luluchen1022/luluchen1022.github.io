@@ -27,12 +27,10 @@ function addOgtitle() {
   const days = Math.floor(countDownTime / day);
   document
     .querySelector('meta[property="og:title"]')
-    .setAttribute("content", `剩餘${days}天`);
+    .setAttribute("content", `Andy轉職倒數${days}天`);
 }
 
-function init() {
+window.onload = function () {
   addOgtitle();
   countDownTimer();
-}
-
-init();
+};
