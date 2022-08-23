@@ -19,19 +19,15 @@ function countDownTimer() {
       (countDownTime - (days * day + hours * hour + minutes * minute)) / second
     );
     document.querySelector(".count_down_timer").innerHTML =
-      days + "天" + hours + ":" + minutes + ":" + seconds;
+      hours + ":" + minutes + ":" + seconds;
   }, 1000);
 }
 
 function addOgtitle() {
   const days = Math.floor(countDownTime / day);
-  const ogTitle = document.createElement("meta");
-  ogTitle.setAttribute("property", "og:title");
-  ogTitle.content = `Andy轉職倒數${days}天`;
-  const head = document.querySelector("head");
-  head.appendChild(ogTitle);
+  const title = document.querySelector(".title");
+  title.innerHTML += `${days}天`;
 }
-
 window.onload = function () {
   addOgtitle();
   countDownTimer();
